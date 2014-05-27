@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <!-- does not necessarily have to be the same name as the bean to be exported -->
+        <property name="serviceName" value="clientService"/>
+        <property name="service" ref="clientService"/>
+        <property name="serviceInterface" value="ClientInterface"/>
+        <!-- defaults to 1099 -->
+        <property name="registryPort" value="1199"/>
+    </bean>
+
+    <bean id="clientService" class="ClientImpl">
+        <!-- any additional properties, maybe a DAO? -->
+    </bean>
+
+    <bean id="DAOImpl" class="DAOImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.sqlite.JDBC" />
+        <property name="url" value="jdbc:sqlite:busParkDataBase.sqlite3"/>
+        <property name="username" value="" />
+        <property name="password" value="" />
+    </bean>
+
+
+</beans>
