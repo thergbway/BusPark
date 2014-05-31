@@ -33,7 +33,7 @@
     </bytecodeTargetLevel>
   </component>
   <component name="CopyrightManager" default="" />
-  <component name="DataSourceManagerImpl" format="xml" hash="2185227611">
+  <component name="DataSourceManagerImpl" format="xml" hash="405974556">
     <data-source source="LOCAL" name="SQLite -" uuid="12d0c83a-b3c7-476a-8fff-b87ab75fb61e">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>

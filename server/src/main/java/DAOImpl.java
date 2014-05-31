@@ -187,8 +187,13 @@ public class DAOImpl implements DAO {
 
     @Override
     synchronized public void setNextListNumber(Integer nextListNumber) {
-        String upd = "update regs set value = \'" + nextListNumber + "\'" +
-                "where key = \'nextListNumber\'";
+        String upd;
+        if(nextListNumber != -1)
+            upd = "update regs set value = \'" + nextListNumber + "\'" +
+                    "where key = \'nextListNumber\'";
+        else
+            upd = "update regs set value = NULL" +
+                    "where key = \'nextListNumber\'";
         jdbcTemplate.execute(upd);
     }
 
