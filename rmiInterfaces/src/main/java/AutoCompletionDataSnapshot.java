@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -6,7 +7,7 @@ import java.util.List;
  * Класс, представляющий варианты для автозаполнения
  * всех элементов формы, сохраненные на сервере, и актуальные на момент создания экземпляра класса
  */
-public class AutoCompletionDataSnapshot {
+public class AutoCompletionDataSnapshot implements Serializable{
     //номер следующего путевого листа или -1, если сервер ничего не может предложить
     public int nextListNumber = -1;
 
@@ -39,4 +40,21 @@ public class AutoCompletionDataSnapshot {
 
     //список названий маршрутов
     public List<String> routeNamesList = new LinkedList<String>();
+
+    @Override
+    public String toString() {
+        return "AutoCompletionDataSnapshot{" +
+                "nextListNumber=" + nextListNumber +
+                ", currentDate=" + currentDate +
+                ", organizationName='" + organizationName + '\'' +
+                ", organizationAddress='" + organizationAddress + '\'' +
+                ", organizationPhoneNumber='" + organizationPhoneNumber + '\'' +
+                ", codeOKPO='" + codeOKPO + '\'' +
+                ", busBrandsList=" + busBrandsList +
+                ", busLicensePlatesList=" + busLicensePlatesList +
+                ", driverFullNamesList=" + driverFullNamesList +
+                ", conductorFullNamesList=" + conductorFullNamesList +
+                ", routeNamesList=" + routeNamesList +
+                '}';
+    }
 }

@@ -29,7 +29,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="server" target="1.6" />
+      <module name="server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="CopyrightManager" default="" />
@@ -195,11 +195,8 @@
       <module fileurl="file://$PROJECT_DIR$/tableEditor/tableEditor.iml" filepath="$PROJECT_DIR$/tableEditor/tableEditor.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
-  </component>
-  <component name="SqlDialectMappings">
-    <file url="mock:///DAOImpl.java" dialect="SQLite" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />

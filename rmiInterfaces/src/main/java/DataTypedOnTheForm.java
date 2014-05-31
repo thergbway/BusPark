@@ -1,8 +1,10 @@
+import java.io.Serializable;
+
 /**
  * Класс, представляющий собой данные, которые были введены на форме.
  * Нужен для отправки на сервер
  */
-public class DataTypedOnTheForm {
+public class DataTypedOnTheForm implements Serializable{
     //номер введенного путевого листа
     public final int listNumber;
 
@@ -47,5 +49,21 @@ public class DataTypedOnTheForm {
         this.driverFullName = driverFullName;
         this.conductorFullName = conductorFullName;
         this.routeName = routeName;
+    }
+
+    @Override
+    public String toString() {
+        return "DataTypedOnTheForm{" +
+                "listNumber=" + listNumber +
+                ", organizationName='" + organizationName + '\'' +
+                ", organizationAddress='" + organizationAddress + '\'' +
+                ", organizationPhoneNumber='" + organizationPhoneNumber + '\'' +
+                ", codeOKPO='" + codeOKPO + '\'' +
+                ", busBrand='" + busBrand + '\'' +
+                ", busLicensePlate='" + busLicensePlate + '\'' +
+                ", driverFullName='" + driverFullName + '\'' +
+                ", conductorFullName='" + conductorFullName + '\'' +
+                ", routeName='" + routeName + '\'' +
+                '}';
     }
 }
